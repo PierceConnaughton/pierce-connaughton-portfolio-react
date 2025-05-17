@@ -6,6 +6,27 @@
  * See LICENSE file in the project root for license information.
  */
 
-export default function Home() {
-    return <h1>Welcome to my portfolio!</h1>;
-}
+import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+
+const Home: React.FC = () => {
+    return (
+        <Box sx={{ textAlign: 'center', mt: 8 }}>
+            <Typography variant="h3" gutterBottom>
+                Hi, I’m Pierce Connaughton
+            </Typography>
+
+            <Typography variant="h6" color="text.secondary">
+                I’m a software developer passionate about building clean, user-focused web applications.
+                Explore my work and learn more about me.
+            </Typography>
+
+            <Button variant="contained" color="primary" component={Link} to="/projects" sx={{ mt: 4 }}>
+                View Projects
+            </Button>
+        </Box>
+    );
+};
+
+export default Home;
