@@ -119,13 +119,13 @@ const Header = () => {
                     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                         <Button
                             color="inherit"
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener"
+                            href="/Pierce Connaughton resume.pdf"
+                            download
                             sx={{ ml: 2 }}
                         >
                             Download Resume
                         </Button>
+
                     </Box>
                 </Toolbar>
             </Container>

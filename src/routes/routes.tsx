@@ -20,7 +20,7 @@ interface RouteType {
 
 const routes: RouteType[] = [
     {
-        index: true,   // this matches path '/'
+        index: true,
         element: <Home />,
     },
     {
