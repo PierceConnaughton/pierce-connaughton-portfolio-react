@@ -1,3 +1,11 @@
+/*
+ * © 2025 Pierce Connaughton
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT License.
+ * See LICENSE file in the project root for license information.
+ */
+
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
