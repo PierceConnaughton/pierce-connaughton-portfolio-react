@@ -11,9 +11,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import routes from './routes/routes';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './styles/theme';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <BrowserRouter>
+    <ThemeProvider theme={theme}>
+    <BrowserRouter>f
         <Routes>
             <Route path="/" element={<App />}>
                 {routes.map(({ path, element, index }) => (
@@ -22,4 +25,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             </Route>
         </Routes>
     </BrowserRouter>
+    </ThemeProvider>
 );
