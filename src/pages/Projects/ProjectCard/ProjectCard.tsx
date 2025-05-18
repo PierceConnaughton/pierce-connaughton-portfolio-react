@@ -8,8 +8,8 @@
 
 import React from 'react';
 import { Card, CardContent, Typography, Chip, Stack } from '@mui/material';
-import type {Project} from "../../../data/Projects.ts";
 import styles from './ProjectCard.module.scss';
+import type {Project} from "../../../data/Projects/ProjectsInterface.ts";
 
 interface Props {
     project: Project;

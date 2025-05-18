@@ -9,9 +9,10 @@
 import React, { useState } from 'react';
 import { Modal, Box, Typography, Stack, Chip, Button, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import {type Project, projects} from "../../../data/Projects.ts";
 import ProjectCard from "../ProjectCard/ProjectCard.tsx";
 import styles from './ProjectList.module.scss';
+import {projects} from "../../../data/Projects/Projects.ts";
+import type {Project} from "../../../data/Projects/ProjectsInterface.ts";
 
 /*
  * ProjectList component displays a list of projects. Each project can be clicked to open a modal with more details.

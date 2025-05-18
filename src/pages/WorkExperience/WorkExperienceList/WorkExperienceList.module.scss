@@ -9,11 +9,7 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-/*
- * This file contains the styles for the ProjectCard component.
- * It is used to display individual project cards in the Projects page.
- */
-.projectCard {
+.workExperienceCard {
   transition: transform 1s cubic-bezier(0.4,0,0.2,1), box-shadow 1s cubic-bezier(0.4,0,0.2,1);
   will-change: transform, box-shadow;
   backface-visibility: hidden;
@@ -23,4 +19,13 @@
     box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.18), 0 0.094rem 0.375rem rgba(0,0,0,0.10);
     z-index: 2;
   }
+}
+
+.workExperienceModalBox {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 37.5rem;
+  margin: 10vh auto;
+  position: relative;
 }

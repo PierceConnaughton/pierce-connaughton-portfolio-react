@@ -6,6 +6,10 @@
  * See the LICENSE file in the project root for license information.
  */
 
-export default function Experience() {
-    return <h1>Work Experience</h1>;
+export interface Project {
+    title: string;
+    description: string;
+    technologies: string[];
+    githubLink: string;
+    liveDemo?: string;
 }

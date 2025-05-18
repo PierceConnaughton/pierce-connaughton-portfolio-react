@@ -9,7 +9,7 @@
 import React from 'react';
 import Home from '../pages/Home/Home.tsx';
 import ProjectsPage from '../pages/Projects/ProjectsPage.tsx';
-import Experience from "../pages/Experience/Experience.tsx";
+import WorkExperience from "../pages/WorkExperience/WorkExperience.tsx";
 import University from "../pages/University/University.tsx";
 
 interface RouteType {
@@ -29,7 +29,7 @@ const routes: RouteType[] = [
     },
     {
         path: 'work-experience',
-        element: <Experience />,
+        element: <WorkExperience />,
     },
     {
         path: 'university',

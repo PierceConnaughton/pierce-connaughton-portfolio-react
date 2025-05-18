@@ -6,18 +6,12 @@
  * See the LICENSE file in the project root for license information.
  */
 
-export interface Project {
-    title: string;
-    description: string;
-    technologies: string[];
-    githubLink: string;
-    liveDemo?: string;
-}
+import type { Project } from './ProjectsInterface.ts';
 
 export const projects: Project[] = [
     {
         title: 'Personal Portfolio',
-        description: 'A personal portfolio website built using React and TypeScript. It showcases my projects, skills, and experience.',
+        description: 'A personal portfolio website built using React and TypeScript. It showcases my projects, skills, and experience. This is the first project I created using React and TypeScript, and it helped me learn the basics of both technologies.',
         technologies: ['React', 'TypeScript', 'Material-UI'],
         githubLink: 'https://github.com/PierceConnaughton/pierce-connaughton-portfolio-react',
         liveDemo: 'https://pierceconnaughton.com'
@@ -50,7 +44,6 @@ export const projects: Project[] = [
         title: 'First Unity Game',
         description: 'A small game created using Unity and C# to help upskill myself on Unity. It is a simple game where you have to collect coins and avoid traps.',
         technologies: ['Unity', 'C#'],
-        githubLink: 'https://github.com/PierceConnaughton/First-2D-Game',
-        liveDemo: 'https://simmer.io/@ti436522/pierce-first-game'
+        githubLink: 'https://github.com/PierceConnaughton/First-2D-Game'
     }
 ];
