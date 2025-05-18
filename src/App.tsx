@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <>
             <Header />
 
-            <Container component="main" sx={{ py: 4, pt: 10 }}>
+            <Container component="main" sx={{ py: 4, pt: 10, pb: { sm: 27 } }}>
                 <Outlet />
             </Container>
 

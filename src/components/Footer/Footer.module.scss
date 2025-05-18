@@ -1,0 +1,25 @@
+/*!
+ * © 2025 Pierce Connaughton
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT License.
+ * See the LICENSE file in the project root for license information.
+ */
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: linear-gradient(90deg, $color-primary-light 0%, $color-primary-dark 100%);
+  color: white;
+  padding: 0.5rem 0 0.5rem 0;
+  position: fixed;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}

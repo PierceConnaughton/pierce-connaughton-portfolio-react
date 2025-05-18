@@ -1,0 +1,48 @@
+/*!
+ * © 2025 Pierce Connaughton
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT License.
+ * See the LICENSE file in the project root for license information.
+ */
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.brand {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.navButton {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+.resumeButton {
+  margin-left: 2rem;
+  color: white;
+}
+
+.appBar {
+  background: linear-gradient(90deg, $color-primary-light 0%, $color-primary-dark 100%) !important;
+  box-shadow: 0 4px 18px rgba(0, 128, 128, 0.12);
+  min-height: 1.5rem;
+}
+
+.navButton {
+  color: white !important;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 0.5rem;
+
+  &:hover,
+  &.active {
+    background: rgba(79, 209, 197, 0.18);
+    color: white !important;
+  }
+}

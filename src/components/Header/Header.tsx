@@ -18,12 +18,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
+import styles from './Header.module.scss';
+import pcLogo from '../../assets/icons/android-chrome-512x512.png';
+
 
 const pages = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' },
     { name: 'Work Experience', path: '/work-experience' },
     { name: 'University', path: '/university' },
 ];
@@ -39,7 +40,7 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="fixed" className={styles.appBar}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* Left: Brand */}
@@ -48,15 +49,10 @@ const Header = () => {
                         noWrap
                         component={Link}
                         to="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontWeight: 700,
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
+                        className={styles.brand}
+                        sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2, mr: 4 }}
                     >
-                        Pierce Connaughton
+                        <img src={pcLogo} alt="PC Logo" style={{ height: 36, width: 36, borderRadius: '50%' }} />
                     </Typography>
                     {/* Mobile Nav */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -88,21 +84,11 @@ const Header = () => {
                         </Menu>
                     </Box>
                     {/* Mobile Brand */}
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component={Link}
-                        to="/"
-                        sx={{
-                            flexGrow: 1,
-                            display: { xs: 'flex', md: 'none' },
-                            fontWeight: 700,
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        Pierce Connaughton
-                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                            <img src={pcLogo} alt="PC Logo" style={{ height: 42, width: 42}} />
+                        </Link>
+                    </Box>
                     {/* Center: Nav Links */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
@@ -111,7 +97,8 @@ const Header = () => {
                                 component={Link}
                                 to={page.path}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                className={`${styles.navButton} ${location.pathname === page.path ? 'active' : ''}`}
+                                sx={{ my: 2, display: 'block' }}
                             >
                                 {page.name}
                             </Button>
@@ -123,7 +110,7 @@ const Header = () => {
                             color="inherit"
                             href="/Pierce Connaughton resume.pdf"
                             download
-                            sx={{ ml: 2 }}
+                            className={styles.resumeButton}
                         >
                             Download Resume
                         </Button>
