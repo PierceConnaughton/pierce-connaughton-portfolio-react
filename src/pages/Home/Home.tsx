@@ -12,6 +12,9 @@ import { Link } from 'react-router-dom';
 import profileImg from '../../assets/images/profile.jpg';
 import styles from './Home.module.scss';
 
+/*
+ * Home component serves as the landing page of the portfolio, showcasing a brief introduction and a call to action.
+ */
 const Home: React.FC = () => {
     return (
         <div className={styles.root}>
@@ -41,14 +44,14 @@ const Home: React.FC = () => {
                         color="text.secondary"
                         sx={{ maxWidth: 400, marginY: 2 }}
                     >
-                        I’m a passionate software developer with a BSc in Computing (Distinction) from Atlantic Technological University.
+                        Hi I’m Pierce, a passionate software developer with a BSc in Computing (Distinction). Committed to providing high-level solutions that drive business.
                     </Typography>
                     <Typography
                         variant="body1"
                         color="text.secondary"
                         sx={{ maxWidth: 400, marginBottom: 2 }}
                     >
-                        Currently, I work as an Associate Software Engineer at SITA, developing a range of applications—including web applications, event-driven systems, APIs, and cloud solutions.
+                        Currently, I work as an Associate Software Engineer, developing a range of applications—including web applications, event-driven systems, APIs, and cloud solutions.
                     </Typography>
                     <Button
                         variant="contained"

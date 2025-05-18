@@ -16,7 +16,7 @@
 
 .card {
   @include elevated-card;
-  padding: $spacing-unit * 6;
+  padding: $spacing-unit * 4;
   max-width: 31.25rem;
   width: 100%;
   text-align: center;

@@ -21,6 +21,10 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import pcLogo from '../../assets/icons/android-chrome-512x512.png';
 
+/*
+ * Header component displays the navigation bar with links to different sections of the website.
+ * It includes a brand logo, navigation links, and a download resume button.
+ */
 
 const pages = [
     { name: 'Home', path: '/' },

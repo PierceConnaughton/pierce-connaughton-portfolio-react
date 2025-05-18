@@ -11,6 +11,9 @@ import { FaLinkedin, FaGithub, FaMapMarker, FaEnvelope, FaPhone } from 'react-ic
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
+/*
+ * Footer component displays quick links, contact information, and social media links.
+ */
 const Footer = () => (
     <Box component="footer" className={styles.footer}>
         {/* Main Content Section */}
@@ -105,7 +108,7 @@ const Footer = () => (
         </Box>
 
         {/* Copyright */}
-        <Box sx={{ textAlign: 'center', py: 2, mt: 2 }}>
+        <Box sx={{ textAlign: 'center', py: 1, mt: 1 }}>
             <Typography variant="body2">
                 &copy; {new Date().getFullYear()} <u>Pierce Connaughton</u> All rights reserved
             </Typography>

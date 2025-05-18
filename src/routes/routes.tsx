@@ -8,7 +8,7 @@
 
 import React from 'react';
 import Home from '../pages/Home/Home.tsx';
-import Projects from '../pages/Projects/Projects.tsx';
+import ProjectsPage from '../pages/Projects/ProjectsPage.tsx';
 import Experience from "../pages/Experience/Experience.tsx";
 import University from "../pages/University/University.tsx";
 
@@ -25,7 +25,7 @@ const routes: RouteType[] = [
     },
     {
         path: 'projects',
-        element: <Projects />,
+        element: <ProjectsPage />,
     },
     {
         path: 'work-experience',
