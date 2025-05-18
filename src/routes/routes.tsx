@@ -7,10 +7,12 @@
  */
 
 import React from 'react';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Projects from '../pages/Projects';
-import Contact from '../pages/Contact';
+import Home from '../pages/Home/Home.tsx';
+import About from '../pages/About/About.tsx';
+import Projects from '../pages/Projects/Projects.tsx';
+import Contact from '../pages/Contact/Contact.tsx';
+import Experience from "../pages/Experience/Experience.tsx";
+import University from "../pages/University/University.tsx";
 
 interface RouteType {
     path?: string;
@@ -34,6 +36,14 @@ const routes: RouteType[] = [
     {
         path: 'contact',
         element: <Contact />,
+    },
+    {
+        path: 'work-experience',
+        element: <Experience />,
+    },
+    {
+        path: 'university',
+        element: <University />,
     },
 ];
 

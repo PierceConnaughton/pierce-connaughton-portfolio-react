@@ -11,18 +11,22 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#008080',
+            main: '#008080', // Teal
         },
         secondary: {
-            main: '#FFD700',
+            main: '#FF6F61', // Coral
         },
         background: {
-            default: '#F9F9F9',
+            default: '#F5F5F5', // Light background
         },
         text: {
-            primary: '#1A1A1A',
+            primary: '#1A1A1A', // Almost black
         },
+    },
+    typography: {
+        fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
     },
 });
 
 export default theme;
+
