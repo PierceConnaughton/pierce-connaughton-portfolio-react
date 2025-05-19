@@ -22,6 +22,7 @@ import { MdBuild } from 'react-icons/md';
 import {GoogleMap, LoadScript, Marker} from "@react-google-maps/api";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styles from './About.module.scss';
+import '../../styles/_headings.scss'
 
 /*
     * About component displays information about the author, including a brief bio, education details, and a list of skills.
@@ -49,9 +50,9 @@ const About: React.FC = () => {
     };
 
     return (
-        <Container maxWidth="md" sx={{ py: 5 }}>
+        <Container>
             {/* Title */}
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" className="heading-underline" gutterBottom>
                 About Me
             </Typography>
 
@@ -70,7 +71,7 @@ const About: React.FC = () => {
 
             {/* Education */}
             <Box mt={5}>
-                <Typography variant="h5" gutterBottom>
+                <Typography variant="h5" className="heading-underline" gutterBottom>
                     Education
                 </Typography>
                 <Paper elevation={2} sx={{ p: 2 }}>
@@ -95,20 +96,20 @@ const About: React.FC = () => {
 
             {/* Skills */}
             <Box mt={5}>
-                <Typography variant="h5" gutterBottom>
+                <Typography variant="h5" className="heading-underline" gutterBottom>
                     Skills
                 </Typography>
                 <div className={styles.skillsGrid}>
                 <Accordion className={styles.skillAccordion}
                            expanded={expanded.includes('programmingLanguages')}
                            onChange={handleAccordionChange('programmingLanguages')}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
                         <Typography variant="h6">Programming Languages</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails className={styles.accordionDetails}>
                         <List dense>
                             {programmingLanguages.map((lang) => (
-                                <ListItem key={lang.name} sx={{ display: 'flex', alignItems: 'center' }}>
+                                <ListItem key={lang.name} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                     {lang.icon && (
                                         <Box component={getIconComponent(lang.icon)} className={styles.skillIcon} />
                                     )}
@@ -121,10 +122,10 @@ const About: React.FC = () => {
                 <Accordion className={styles.skillAccordion}
                            expanded={expanded.includes('frameworks')}
                            onChange={handleAccordionChange('frameworks')}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
                         <Typography variant="h6">Frameworks & Libraries</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails className={styles.accordionDetails}>
                         <List dense>
                             {frameworks.map((framework) => (
                                 <ListItem key={framework.name} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -140,10 +141,10 @@ const About: React.FC = () => {
                 <Accordion className={styles.skillAccordion}
                            expanded={expanded.includes('cloudWeb')}
                            onChange={handleAccordionChange('cloudWeb')}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
                         <Typography variant="h6">Cloud & Web Tech</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails className={styles.accordionDetails}>
                         <List dense>
                             {cloudWeb.map((tech) => (
                                 <ListItem key={tech.name} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -159,10 +160,10 @@ const About: React.FC = () => {
                 <Accordion className={styles.skillAccordion}
                            expanded={expanded.includes('softSkills')}
                            onChange={handleAccordionChange('softSkills')}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
                         <Typography variant="h6">Soft Skills</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails className={styles.accordionDetails}>
                         <List dense>
                             {softSkills.map((skill) => (
                                 <ListItem key={skill}>
@@ -175,10 +176,10 @@ const About: React.FC = () => {
                 <Accordion className={styles.skillAccordion}
                            expanded={expanded.includes('toolsAndTechnologies')}
                            onChange={handleAccordionChange('toolsAndTechnologies')}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
                         <Typography variant="h6">Tools & Technologies</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails className={styles.accordionDetails}>
                         <List dense>
                             {toolsAndTechnologies.map((tool) => (
                                 <ListItem key={tool.name} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

@@ -11,20 +11,45 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#008080', // Teal
+            light: '#4FD1C5',
+            main: '#008080',
+            dark: '#005959',
         },
         secondary: {
-            main: '#FF6F61', // Coral
+            light: '#FF9A8B',
+            main: '#FF6F61',
+            dark: '#C94A3B',
         },
         background: {
-            default: '#F5F5F5', // Light background
+            default: '#E6F2F2',
         },
         text: {
-            primary: '#1A1A1A', // Almost black
+            primary: '#1A1A1A',
         },
     },
     typography: {
         fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+        h4: {
+            fontFamily: `'Poppins', 'Inter', 'Roboto', sans-serif`,
+            fontWeight: 600,
+            color: '#222',
+            letterSpacing: '0.01em',
+        },
+        h5: {
+            fontFamily: `'Poppins', 'Inter', 'Roboto', sans-serif`,
+            fontWeight: 500,
+            color: '#222',
+            letterSpacing: '0.01em',
+        },
+    },
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    background: '#ebfaf8',
+                },
+            },
+        },
     },
 });
 

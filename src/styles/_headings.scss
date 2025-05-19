@@ -1,0 +1,21 @@
+/*!
+ * © 2025 Pierce Connaughton
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT License.
+ * See the LICENSE file in the project root for license information.
+ */
+
+@use './variables' as *;
+
+.heading-underline {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    height: 0.188rem;
+    background-color: $color-accent;
+    border-radius: 0.125rem;
+    margin-top: 0.4em;
+  }
+}

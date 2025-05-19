@@ -13,9 +13,11 @@ import App from './App';
 import routes from './routes/routes';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './styles/theme';
+import { CssBaseline } from '@mui/material';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={theme}>
+    <CssBaseline />
     <BrowserRouter>f
         <Routes>
             <Route path="/" element={<App />}>

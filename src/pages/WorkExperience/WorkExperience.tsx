@@ -9,14 +9,15 @@
 import React from 'react';
 import {Container, Typography} from '@mui/material';
 import WorkExperienceList from "./WorkExperienceList/WorkExperienceList.tsx";
+import '../../styles/_headings.scss'
 
 /*
  * WorkExperience component displays a list of work experiences with a brief description.
  * It includes a title and a short introduction.
  */
 const WorkExperience: React.FC = () => (
-    <Container sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom>
+    <Container>
+        <Typography variant="h4" className="heading-underline" gutterBottom>
             Work Experience
         </Typography>
         <Typography variant="body1" sx={{ mb: 3 }}>

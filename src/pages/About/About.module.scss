@@ -37,3 +37,14 @@
 .skillAccordion {
   width: 100%;
 }
+
+.accordionSummary {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.accordionDetails {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
