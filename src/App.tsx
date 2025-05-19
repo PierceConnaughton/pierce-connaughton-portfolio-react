@@ -14,15 +14,13 @@ import { Container } from '@mui/material';
 
 const App: React.FC = () => {
     return (
-        <>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '96vh' }}>
             <Header />
-
-            <Container component="main" sx={{ py: 4, pt: 10, pb: { xs: 17, sm: 27 }  }}>
+            <Container component="main" sx={{ py: 4, pt: 10, pb: { xs: 3, sm: 5 }, flex: 1 }}>
                 <Outlet />
             </Container>
-
             <Footer />
-        </>
+        </div>
     );
 };
 
