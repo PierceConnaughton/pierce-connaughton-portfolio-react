@@ -11,6 +11,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import { Container } from '@mui/material';
+import { Analytics } from "@vercel/analytics/next"
 
 const App: React.FC = () => {
     return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
                 <Outlet />
             </Container>
             <Footer />
+            <Analytics />
         </div>
     );
 };
