@@ -63,8 +63,8 @@ const Home: React.FC = () => {
                     >
                         This portfolio is my first React project, built to showcase my ability to quickly upskill and learn new technologies.
                     </Typography>
-                    <Grid container spacing={2} justifyContent="center">
-                        <Grid item>
+                    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, md: 8 }}>
+                        <Grid size={4}>
                             <Button
                                 variant="outlined"
                                 color="primary"
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
                                 View Projects
                             </Button>
                         </Grid>
-                        <Grid item>
+                        <Grid size={4}>
                             <Button
                                 variant="outlined"
                                 color="primary"
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                                 Work Experience
                             </Button>
                         </Grid>
-                        <Grid item>
+                        <Grid size={8}>
                             <Button
                                 variant="outlined"
                                 color="primary"
