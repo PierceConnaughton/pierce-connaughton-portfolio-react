@@ -23,7 +23,11 @@ import {GoogleMap, LoadScript, Marker} from "@react-google-maps/api";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styles from './About.module.scss';
 
-
+/*
+    * About component displays information about the author, including a brief bio, education details, and a list of skills.
+    * The education section includes a Google Maps showing the location of the university.
+    * The skills section is divided into categories, each expandable to show the relevant skills.
+ */
 const About: React.FC = () => {
     const getIconComponent = (iconName?: string) => {
         if (!iconName) return MdBuild;

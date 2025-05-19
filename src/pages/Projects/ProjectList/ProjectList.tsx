@@ -26,13 +26,15 @@ const ProjectList: React.FC = () => {
 
     return (
         <>
-            {projects.map((project) => (
-                <ProjectCard
-                    key={project.title}
-                    project={project}
-                    onClick={() => setSelectedProject(project)}
-                />
-            ))}
+            <div className={styles.projectGrid}>
+                {projects.map((project) => (
+                    <ProjectCard
+                        key={project.title}
+                        project={project}
+                        onClick={() => setSelectedProject(project)}
+                    />
+                ))}
+            </div>
 
             <Modal open={!!selectedProject} onClose={handleClose}>
                 <Box className={styles.projectModalBox}>

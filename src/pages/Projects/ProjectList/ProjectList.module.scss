@@ -15,9 +15,16 @@
  */
 .projectModalBox {
   background-color: white;
-  padding: 32px;
-  border-radius: 16px;
-  max-width: 600px;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 37.5rem;
   margin: 10vh auto;
   position: relative;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
