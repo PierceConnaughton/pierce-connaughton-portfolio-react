@@ -24,7 +24,7 @@ export const projects: Project[] = [
     },
     {
         title: 'WPF Black Jack Game',
-        description: 'In my second year in University, I created a working blackjack game using WPF for my programming project. This project helped earn me my 90% in my final grade.',
+        description: 'In my second year in About, I created a working blackjack game using WPF for my programming project. This project helped earn me my 90% in my final grade.',
         technologies: ['C#', 'WPF', 'XAML'],
         githubLink: 'https://github.com/PierceConnaughton/BlackJack',
     },

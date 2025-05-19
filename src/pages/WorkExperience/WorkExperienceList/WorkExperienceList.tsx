@@ -66,7 +66,7 @@ const WorkExperienceList: React.FC = () => {
                                 <Box sx={{ my: 2 }}>
                                     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY!}>
                                         <GoogleMap
-                                            mapContainerStyle={{ width: '100%', height: '220px', borderRadius: 8 }}
+                                            mapContainerStyle={{ width: '100%', height: '13.75rem', borderRadius: 8 }}
                                             center={{ lat: selectedCompany.latitude, lng: selectedCompany.longitude }}
                                             zoom={14}
                                         >

@@ -1,0 +1,28 @@
+/*!
+ * © 2025 Pierce Connaughton
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT License.
+ * See the LICENSE file in the project root for license information.
+ */
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.bioPaper {
+  padding: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--mui-palette-background-default, #fff);
+  border-left: 0.375rem solid #4fd1c5;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+}
+
+.skillIcon {
+  font-size: 1.5rem; // 24px
+  color: #4fd1c5;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+}

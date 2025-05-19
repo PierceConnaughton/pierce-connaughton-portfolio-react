@@ -30,7 +30,7 @@ const pages = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
     { name: 'Work Experience', path: '/work-experience' },
-    { name: 'University', path: '/university' },
+    { name: 'About', path: '/about' },
 ];
 
 const Header = () => {

@@ -49,8 +49,8 @@ const Footer = () => (
                     </MuiLink>
                 </Typography>
                 <Typography variant="body2">
-                    <MuiLink component={Link} to="/university" color="inherit" underline="hover">
-                        UNIVERSITY
+                    <MuiLink component={Link} to="/about" color="inherit" underline="hover">
+                        ABOUT
                     </MuiLink>
                 </Typography>
             </Box>
