@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Typography, Button, Avatar, Stack, Paper } from '@mui/material';
+import { Typography, Button, Avatar, Stack, Paper, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import profileImg from '../../assets/images/profile.jpg';
 import styles from './Home.module.scss';
@@ -53,15 +53,46 @@ const Home: React.FC = () => {
                     >
                         Currently, I work as an Associate Software Engineer, developing a range of applications—including web applications, event-driven systems, APIs, and cloud solutions.
                     </Typography>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        component={Link}
-                        to="/projects"
-                        className={styles.button}
+                    <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ maxWidth: 400, fontStyle: 'italic', marginBottom: 2 }}
                     >
-                        View Projects
-                    </Button>
+                        This portfolio is my first React project, built to showcase my ability to quickly upskill and learn new technologies.
+                    </Typography>
+                    <Grid container spacing={2} justifyContent="center">
+                        <Grid item>
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                component={Link}
+                                to="/projects"
+                                className={styles.button}
+                            >
+                                View Projects
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                component={Link}
+                                to="/work-experience"
+                            >
+                                Work Experience
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                component={Link}
+                                to="/about"
+                            >
+                                About Me
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </Stack>
             </Paper>
         </div>
