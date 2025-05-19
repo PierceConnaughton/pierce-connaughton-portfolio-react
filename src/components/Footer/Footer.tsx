@@ -18,13 +18,10 @@ const Footer = () => (
     <Box component="footer" className={styles.footer}>
         {/* Main Content Section */}
         <Box
+            className={styles.footerbody}
             sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'stretch',
                 maxWidth: 'lg',
                 mx: 'auto',
-                width: '100%',
                 gap: 3,
             }}
         >

@@ -24,3 +24,10 @@
   margin-left: calc(50% - 50vw);
   margin-bottom: calc(50% - 50vw);
 }
+
+.footerbody {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
