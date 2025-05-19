@@ -42,21 +42,24 @@ const Home: React.FC = () => {
                     <Typography
                         variant="body1"
                         color="text.secondary"
-                        sx={{ maxWidth: 400, marginY: 2 }}
+                        className={styles.body}
+                        sx={{ marginY: 2 }}
                     >
                         Hi I’m Pierce, a passionate software developer with a BSc in Computing (Distinction). Committed to providing high-level solutions that drive business.
                     </Typography>
                     <Typography
                         variant="body1"
                         color="text.secondary"
-                        sx={{ maxWidth: 400, marginBottom: 2 }}
+                        className={styles.body}
+                        sx={{ marginBottom: 2 }}
                     >
                         Currently, I work as an Associate Software Engineer, developing a range of applications—including web applications, event-driven systems, APIs, and cloud solutions.
                     </Typography>
                     <Typography
                         variant="body2"
                         color="text.secondary"
-                        sx={{ maxWidth: 400, fontStyle: 'italic', marginBottom: 2 }}
+                        className={styles.body}
+                        sx={{ fontStyle: 'italic', marginBottom: 2 }}
                     >
                         This portfolio is my first React project, built to showcase my ability to quickly upskill and learn new technologies.
                     </Typography>

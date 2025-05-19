@@ -50,6 +50,12 @@
   font-weight: 500;
 }
 
+.body {
+  color: $color-text;
+  font-weight: 400;
+  max-width: 24.5rem;
+}
+
 .button {
   margin-top: $spacing-unit * 2;
   padding: $spacing-unit * 1.5 $spacing-unit * 4;

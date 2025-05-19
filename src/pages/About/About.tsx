@@ -6,7 +6,7 @@
  * See the LICENSE file in the project root for license information.
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Typography, Paper, Box, List, ListItem, ListItemText, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import {
     softSkills,
@@ -29,6 +29,19 @@ import styles from './About.module.scss';
     * The skills section is divided into categories, each expandable to show the relevant skills.
  */
 const About: React.FC = () => {
+    const [expanded, setExpanded] = useState<string[]>([]);
+
+    const handleAccordionChange = (key: string) => (
+        _event: React.SyntheticEvent,
+        isExpanded: boolean
+    ) => {
+        setExpanded(prev =>
+            isExpanded
+                ? [...prev, key]
+                : prev.filter(k => k !== key)
+        );
+    };
+
     const getIconComponent = (iconName?: string) => {
         if (!iconName) return MdBuild;
         // @ts-ignore
@@ -85,14 +98,17 @@ const About: React.FC = () => {
                 <Typography variant="h5" gutterBottom>
                     Skills
                 </Typography>
-                <Accordion>
+                <div className={styles.skillsGrid}>
+                <Accordion className={styles.skillAccordion}
+                           expanded={expanded.includes('programmingLanguages')}
+                           onChange={handleAccordionChange('programmingLanguages')}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography variant="h6">Programming Languages</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <List dense>
                             {programmingLanguages.map((lang) => (
-                                <ListItem key={lang.name} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                <ListItem key={lang.name} sx={{ display: 'flex', alignItems: 'center' }}>
                                     {lang.icon && (
                                         <Box component={getIconComponent(lang.icon)} className={styles.skillIcon} />
                                     )}
@@ -102,7 +118,9 @@ const About: React.FC = () => {
                         </List>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className={styles.skillAccordion}
+                           expanded={expanded.includes('frameworks')}
+                           onChange={handleAccordionChange('frameworks')}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography variant="h6">Frameworks & Libraries</Typography>
                     </AccordionSummary>
@@ -119,7 +137,9 @@ const About: React.FC = () => {
                         </List>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className={styles.skillAccordion}
+                           expanded={expanded.includes('cloudWeb')}
+                           onChange={handleAccordionChange('cloudWeb')}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography variant="h6">Cloud & Web Tech</Typography>
                     </AccordionSummary>
@@ -136,7 +156,9 @@ const About: React.FC = () => {
                         </List>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className={styles.skillAccordion}
+                           expanded={expanded.includes('softSkills')}
+                           onChange={handleAccordionChange('softSkills')}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography variant="h6">Soft Skills</Typography>
                     </AccordionSummary>
@@ -150,7 +172,9 @@ const About: React.FC = () => {
                         </List>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className={styles.skillAccordion}
+                           expanded={expanded.includes('toolsAndTechnologies')}
+                           onChange={handleAccordionChange('toolsAndTechnologies')}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography variant="h6">Tools & Technologies</Typography>
                     </AccordionSummary>
@@ -167,6 +191,7 @@ const About: React.FC = () => {
                         </List>
                     </AccordionDetails>
                 </Accordion>
+            </div>
             </Box>
         </Container>
     );
