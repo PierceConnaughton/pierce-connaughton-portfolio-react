@@ -23,17 +23,9 @@ export const programmingLanguages = [
     { name: 'Python', icon: 'LgPython' },
     { name: 'JavaScript', icon: 'LgJavascript' },
     { name: 'TypeScript', icon: 'LgTypescript' },
-    { name: 'SQL', icon: 'SiSqlite' },
-    { name: 'NoSQL', icon: 'SiNosql' },
-    { name: 'PostgreSQL', icon: 'SiPostgresql' },
     { name: 'Prolog', icon: 'SiProlog' },
     { name: 'PHP', icon: 'LgPhp' },
-    { name: 'Ruby', icon: 'LgRuby' },
-    { name: 'HTML', icon: 'LgHtml5' },
-    { name: 'CSS', icon: 'LgCss3' },
-    { name: 'XML', icon: 'SiXml' },
-    { name: 'JSON', icon: 'LgJson' },
-    { name: 'YAML', icon: 'SiYaml' }
+    { name: 'Ruby', icon: 'LgRuby' }
 ];
 
 export const frameworks = [
@@ -45,16 +37,15 @@ export const frameworks = [
     { name: 'Rails', icon: 'LgRails' },
     { name: 'Bootstrap', icon: 'LgBootstrap' },
     { name: 'jQuery', icon: 'LgJquery' },
-    { name: 'Material Design', icon: 'SiMaterialdesign' },
-    { name: 'Kivy', icon: 'LgKivy' },
+    { name: 'Kivy', icon: 'LgKivy' }
 ];
 
 export const cloudWeb = [
-    {name: 'AWS', icon: 'LgAws'},
-    {name: 'Azure', icon: 'LgAzureIcon'},
-    {name: 'Google Cloud', icon: 'LgGoogleCloud'},
-    {name: 'Firebase', icon: 'LgFirebase'},
-    {name: 'Microsoft Dynamics 365', icon: 'LgMicrosoft'}
+    { name: 'AWS', icon: 'LgAws' },
+    { name: 'Azure', icon: 'LgAzureIcon' },
+    { name: 'Google Cloud', icon: 'LgGoogleCloud' },
+    { name: 'Firebase', icon: 'LgFirebase' },
+    { name: 'Microsoft Dynamics 365', icon: 'LgMicrosoft' }
 ];
 
 export const toolsAndTechnologies = [
@@ -66,10 +57,20 @@ export const toolsAndTechnologies = [
     { name: 'Power BI', icon: 'SiPowerbi' },
     { name: 'Neo4j', icon: 'LgNeo4J' },
     { name: 'Kafka', icon: 'LgKafka' },
+    { name: 'Postman', icon: 'LgPostman' },
+    { name: 'SQL', icon: 'SiSqlite' },
+    { name: 'NoSQL', icon: 'SiNosql' },
+    { name: 'PostgreSQL', icon: 'SiPostgresql' },
+    { name: 'XML', icon: 'SiXml' },
+    { name: 'JSON', icon: 'LgJson' },
+    { name: 'YAML', icon: 'SiYaml' },
+    { name: 'Material Design', icon: 'SiMaterialdesign' }
+];
+
+export const ides = [
     { name: 'Intellij IDEA', icon: 'LgIntellijIdea' },
     { name: 'Webstorm', icon: 'LgWebstorm' },
     { name: 'Visual Studio', icon: 'LgVisualStudio' },
-    { name: 'Visual Studio Code', icon: 'LgVisualStudioCode'},
-    { name: 'Eclipse', icon: 'LgEclipse' },
-    { name: 'Postman', icon: 'LgPostman' },
+    { name: 'Visual Studio Code', icon: 'LgVisualStudioCode' },
+    { name: 'Eclipse', icon: 'LgEclipse' }
 ];

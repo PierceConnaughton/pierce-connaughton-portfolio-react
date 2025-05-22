@@ -192,6 +192,25 @@ const About: React.FC = () => {
                         </List>
                     </AccordionDetails>
                 </Accordion>
+                    <Accordion className={styles.skillAccordion}
+                               expanded={expanded.includes('ides')}
+                               onChange={handleAccordionChange('ides')}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
+                            <Typography variant="h6">Tools & Technologies</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails className={styles.accordionDetails}>
+                            <List dense>
+                                {ides.map((tool) => (
+                                    <ListItem key={tool.name} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                        {tool.icon && (
+                                            <Box component={getIconComponent(tool.icon)} className={styles.skillIcon} />
+                                        )}
+                                        <ListItemText primary={tool.name} sx={{ fontWeight: 500 }} />
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </AccordionDetails>
+                    </Accordion>
             </div>
             </Box>
         </Container>
