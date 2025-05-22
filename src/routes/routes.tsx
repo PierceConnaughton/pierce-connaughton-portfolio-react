@@ -11,6 +11,7 @@ import Home from '../pages/Home/Home.tsx';
 import ProjectsPage from '../pages/Projects/ProjectsPage.tsx';
 import WorkExperience from "../pages/WorkExperience/WorkExperience.tsx";
 import About from "../pages/About/About.tsx";
+import NotFound from "../pages/NotFound/NotFound.tsx";
 
 interface RouteType {
     path?: string;
@@ -34,6 +35,10 @@ const routes: RouteType[] = [
     {
         path: 'about',
         element: <About />,
+    },
+    {
+        path: '*',
+        element: <NotFound />,
     },
 ];
 
