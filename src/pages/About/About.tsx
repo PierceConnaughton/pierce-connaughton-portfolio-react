@@ -197,7 +197,7 @@ const About: React.FC = () => {
                                expanded={expanded.includes('ides')}
                                onChange={handleAccordionChange('ides')}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
-                            <Typography variant="h6">Tools & Technologies</Typography>
+                            <Typography variant="h6">IDEs</Typography>
                         </AccordionSummary>
                         <AccordionDetails className={styles.accordionDetails}>
                             <List dense>
