@@ -13,7 +13,8 @@ import {
     programmingLanguages,
     frameworks,
     cloudWeb,
-    toolsAndTechnologies
+    toolsAndTechnologies,
+    ides
 } from '../../data/Skills/skills.ts';
 import { university } from "../../data/University/university.ts";
 import * as SiIcons from 'react-icons/si';
