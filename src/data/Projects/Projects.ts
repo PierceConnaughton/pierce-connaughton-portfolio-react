@@ -14,7 +14,7 @@ export const projects: Project[] = [
         description: 'A personal portfolio website built using React and TypeScript. It showcases my projects, skills, and experience. This is the first project I created using React and TypeScript, and it helped me learn the basics of both technologies.',
         technologies: ['React', 'TypeScript', 'Material-UI'],
         githubLink: 'https://github.com/PierceConnaughton/pierce-connaughton-portfolio-react',
-        liveDemo: 'https://pierceconnaughton.com'
+        liveDemo: 'https://pierce-connaughton.ie'
     },
     {
         title: 'AI Tweet Generator',
