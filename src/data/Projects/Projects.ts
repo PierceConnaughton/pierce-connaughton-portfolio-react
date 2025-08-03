@@ -17,6 +17,13 @@ export const projects: Project[] = [
         liveDemo: 'https://pierce-connaughton.ie'
     },
     {
+        title: 'WrestleGraph',
+        description: 'A webapp that visualizes statistics scraped from cagematch.net. It showcases my skills with angular and spring.',
+        technologies: ['Angular', 'Spring', 'Material-UI'],
+        githubLink: 'https://github.com/PierceConnaughton/wrestlegraph-frontend',
+        liveDemo: 'https://www.wrestlegraph.com'
+    },
+    {
         title: 'AI Tweet Generator',
         description: 'A tweet generator that uses the Twitter API to generate tweets based on a given topic. It allows users to input a topic and generates a tweet based on that topic, as well as detect the sentiment of the topic. This was used as my final project for university, using technologies I had not used upto that point.',
         technologies: ['Python', 'Kivy', 'KivyMD', 'Twitter API'],
