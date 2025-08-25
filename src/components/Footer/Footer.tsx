@@ -6,8 +6,9 @@
  * See the LICENSE file in the project root for license information.
  */
 
-import { Box, Typography, IconButton, Link as MuiLink } from '@mui/material';
+import { Box, Typography, IconButton, Link as MuiLink, Button } from '@mui/material';
 import { FaLinkedin, FaGithub, FaMapMarker, FaEnvelope, FaPhone } from 'react-icons/fa';
+import DownloadIcon from '@mui/icons-material/Download';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
@@ -17,97 +18,106 @@ import styles from './Footer.module.scss';
 const Footer = () => (
     <Box component="footer" className={styles.footer}>
         {/* Main Content Section */}
-        <Box
-            className={styles.footerbody}
-            sx={{
-                maxWidth: 'lg',
-                mx: 'auto',
-                gap: 3,
-            }}
-        >
-            {/* Quick Links */}
-            <Box sx={{ flex: 1, minWidth: 0, display: { xs: 'none', md: 'block' } }}>
-                <Typography variant="h6" fontWeight="bold" gutterBottom>
-                    Quick links
-                </Typography>
-                <Typography variant="body2">
-                    <MuiLink component={Link} to="/" color="inherit" underline="hover">
-                        HOME
-                    </MuiLink>
-                </Typography>
-                <Typography variant="body2">
-                    <MuiLink component={Link} to="/projects" color="inherit" underline="hover">
-                        PROJECTS
-                    </MuiLink>
-                </Typography>
-                <Typography variant="body2">
-                    <MuiLink component={Link} to="/work-experience" color="inherit" underline="hover">
-                        WORK EXPERIENCE
-                    </MuiLink>
-                </Typography>
-                <Typography variant="body2">
-                    <MuiLink component={Link} to="/about" color="inherit" underline="hover">
-                        ABOUT
-                    </MuiLink>
-                </Typography>
-            </Box>
+        <Box className={styles.footerbody}>
             {/* Contact */}
-            <Box sx={{ flex: 1, minWidth: 0, display: { xs: 'none', md: 'block' } }}>
-                <Typography variant="h6" fontWeight="bold" gutterBottom align="center">
+            <Box className={styles.footerSection}>
+                <Typography variant="h6" className={styles.footerHeader}>
                     Contact
                 </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                        <FaMapMarker style={{ marginRight: 8 }} /> Letterkenny, Co.Donegal, Republic Of Ireland.
-                    </Typography>
-                    <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                        <FaEnvelope style={{ marginRight: 8 }} />
-                        <MuiLink
-                            href="mailto:pierce.connaught@gmail.com"
-                            color="inherit"
-                            underline="always"
-                            sx={{ fontWeight: 'bold', cursor: 'pointer' }}
-                        >
-                            pierce.connaught@gmail.com
-                        </MuiLink>
-                    </Typography>
-                    <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center' }}>
-                        <FaPhone style={{ marginRight: 8 }} /> +353 083-074-7786
-                    </Typography>
+                <Box className={styles.contactInfo}>
+                    <Box className={styles.contactItem}>
+                        <FaMapMarker className={styles.icon} />
+                        <Typography variant="body2" sx={{ fontSize: 'inherit' }}>
+                            Donegal, Ireland
+                        </Typography>
+                    </Box>
+                    <Box className={styles.contactItem}>
+                        <FaPhone className={styles.icon} />
+                        <Typography variant="body2" sx={{ fontSize: 'inherit' }}>
+                            +353 083-074-7786
+                        </Typography>
+                    </Box>
                 </Box>
             </Box>
-            {/* Social Media */}
-            <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography variant="h6" fontWeight="bold" gutterBottom>
-                    Social Media
+            
+            {/* Connect */}
+            <Box className={styles.footerSection}>
+                <Typography variant="h6" className={styles.footerHeader}>
+                    Connect
                 </Typography>
-                <IconButton
+                <Box className={styles.socialLinks}>
+                    <IconButton
+                        component="a"
+                        href="mailto:pierce.connaught@gmail.com"
+                        target="_blank"
+                        rel="noopener"
+                        className={styles.socialButton}
+                        aria-label="Email"
+                        size="small"
+                    >
+                        <FaEnvelope />
+                    </IconButton>
+                    <IconButton
+                        component="a"
+                        href="https://www.linkedin.com/in/pierce-connaughton/"
+                        target="_blank"
+                        rel="noopener"
+                        className={styles.socialButton}
+                        aria-label="LinkedIn"
+                        size="small"
+                    >
+                        <FaLinkedin />
+                    </IconButton>
+                    <IconButton
+                        component="a"
+                        href="https://github.com/PierceConnaughton/"
+                        target="_blank"
+                        rel="noopener"
+                        className={styles.socialButton}
+                        aria-label="GitHub"
+                        size="small"
+                    >
+                        <FaGithub />
+                    </IconButton>
+                </Box>
+            </Box>
+            
+            {/* Resume Download */}
+            <Box className={styles.footerSection}>
+                <Typography variant="h6" className={styles.footerHeader}>
+                    Resume
+                </Typography>
+                <Button
                     component="a"
-                    href="https://www.linkedin.com/in/pierce-connaughton/"
-                    target="_blank"
-                    rel="noopener"
-                    className={styles.linkedin}
-                    color="inherit"
+                    href="/Pierce Connaughton resume.pdf"
+                    download
+                    variant="outlined"
+                    size="small"
+                    className={styles.resumeButton}
+                    startIcon={<DownloadIcon sx={{ fontSize: '1rem' }} />}
+                    sx={{
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                        '&:hover': {
+                            color: 'white',
+                            borderColor: 'rgba(255, 255, 255, 0.4)',
+                            backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }}
                 >
-                    <FaLinkedin />
-                </IconButton>
-                <IconButton
-                    component="a"
-                    href="https://github.com/PierceConnaughton/"
-                    target="_blank"
-                    rel="noopener"
-                    className={styles.github}
-                    color="inherit"
-                >
-                    <FaGithub />
-                </IconButton>
+                    Download CV
+                </Button>
             </Box>
         </Box>
 
         {/* Copyright */}
-        <Box sx={{ textAlign: 'center', py: 1, mt: 1 }}>
-            <Typography variant="body2">
-                &copy; {new Date().getFullYear()} <u>Pierce Connaughton</u> All rights reserved
+        <Box className={styles.copyright}>
+            <Typography className={styles.copyrightText}>
+                &copy; {new Date().getFullYear()}{' '}
+                <Link to="/" className={styles.name}>
+                    Pierce Connaughton
+                </Link>{' '}
+                All rights reserved
             </Typography>
         </Box>
     </Box>
