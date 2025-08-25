@@ -7,9 +7,9 @@
  */
 
 import React, { useState } from 'react';
-import { Modal, Box, Typography, Stack, Chip, Button, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Typography, Box, Stack, Chip, Button } from '@mui/material';
 import ProjectCard from "../ProjectCard/ProjectCard.tsx";
+import { Modal } from '../../../components';
 import styles from './ProjectList.module.scss';
 import {projects} from "../../../data/Projects/Projects.ts";
 import type {Project} from "../../../data/Projects/ProjectsInterface.ts";
@@ -37,54 +37,52 @@ const ProjectList: React.FC = () => {
             </div>
 
             <Modal open={!!selectedProject} onClose={handleClose}>
-                <Box className={styles.projectModalBox}>
-                    <IconButton
-                        aria-label="close"
-                        onClick={handleClose}
-                        sx={{
-                            position: 'absolute',
-                            right: 8,
-                            top: 8
-                        }}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    {selectedProject && (
-                        <>
-                            <Typography variant="h5">{selectedProject.title}</Typography>
-                            <Typography variant="body1" sx={{ my: 2 }}>
-                                {selectedProject.description}
-                            </Typography>
+                {selectedProject && (
+                    <>
+                        <Typography className={styles.modalTitle}>
+                            {selectedProject.title}
+                        </Typography>
+                        <Typography className={styles.modalDescription}>
+                            {selectedProject.description}
+                        </Typography>
 
-                            <Stack direction="row" spacing={1} mb={2} flexWrap="wrap">
+                        <Box className={styles.modalTechnologies}>
+                            <Stack direction="row" spacing={1} flexWrap="wrap">
                                 {selectedProject.technologies.map((tech) => (
-                                    <Chip key={tech} label={tech} />
+                                    <Chip 
+                                        key={tech} 
+                                        label={tech} 
+                                        className={styles.techChip}
+                                        size="medium"
+                                    />
                                 ))}
                             </Stack>
+                        </Box>
 
-                            <Stack direction="row" spacing={2}>
+                        <Box className={styles.modalActions}>
+                            <Button
+                                variant="outlined"
+                                href={selectedProject.githubLink}
+                                target="_blank"
+                                rel="noopener"
+                                className={`${styles.actionButton} ${styles.outlined}`}
+                            >
+                                View on GitHub
+                            </Button>
+                            {selectedProject.liveDemo && (
                                 <Button
-                                    variant="outlined"
-                                    href={selectedProject.githubLink}
+                                    variant="contained"
+                                    href={selectedProject.liveDemo}
                                     target="_blank"
                                     rel="noopener"
+                                    className={styles.actionButton}
                                 >
-                                    GitHub
+                                    Live Demo
                                 </Button>
-                                {selectedProject.liveDemo && (
-                                    <Button
-                                        variant="contained"
-                                        href={selectedProject.liveDemo}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        Live Demo
-                                    </Button>
-                                )}
-                            </Stack>
-                        </>
-                    )}
-                </Box>
+                            )}
+                        </Box>
+                    </>
+                )}
             </Modal>
         </>
     );

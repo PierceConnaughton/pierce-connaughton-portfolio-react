@@ -8,3 +8,26 @@
 
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
+
+.workExperiencePage {
+  padding: 2rem 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.workExperienceList {
+  margin-bottom: 1.5rem;
+}
+
+// Responsive design
+@media (max-width: 900px) {
+  .workExperiencePage {
+    padding: 1.75rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .workExperiencePage {
+    padding: 1.5rem 0;
+  }
+}

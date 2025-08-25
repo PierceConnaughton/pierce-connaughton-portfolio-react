@@ -7,9 +7,9 @@
  */
 
 import React, { useState } from 'react';
-import { Typography, Box, Paper, Stack, Modal, IconButton, List, ListItem, ListItemText } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { workExperiences } from '../../../data/WorkExperience/WorkExperience.ts';
+import { Typography, Box, Stack, List, ListItem, ListItemText } from '@mui/material';
+import { workExperiences } from "../../../data/WorkExperience/WorkExperience.ts";
+import { Modal } from '../../../components';
 import styles from './WorkExperienceList.module.scss';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
@@ -24,86 +24,84 @@ const WorkExperienceList: React.FC = () => {
 
     return (
         <>
-            <Stack spacing={3}>
+            <Stack spacing={2}>
                 {workExperiences.map((companyExp) => (
-                    <Paper
+                    <Box
                         key={companyExp.company}
                         className={styles.workExperienceCard}
-                        sx={{ p: 3, cursor: 'pointer' }}
                         onClick={() => setSelectedCompany(companyExp)}
                     >
-                        <Typography variant="h6">{companyExp.company}</Typography>
-                        <Typography variant="subtitle2" color="text.secondary">
+                        <Typography className={styles.companyName}>
+                            {companyExp.company}
+                        </Typography>
+                        <Typography className={styles.location}>
                             {companyExp.location}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                        <Typography className={styles.roles}>
                             {companyExp.roles.map((role) => role.title).join(', ')}
                         </Typography>
-                    </Paper>
+                    </Box>
                 ))}
             </Stack>
 
             <Modal open={!!selectedCompany} onClose={handleClose}>
-                <Box className={styles.workExperienceModalBox}
-                sx={{
-                    maxHeight: '70vh',
-                    overflowY: 'auto'
-                }}>
-                    <IconButton
-                        aria-label="close"
-                        onClick={handleClose}
-                        sx={{ position: 'absolute', right: 8, top: 8 }}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    {selectedCompany && (
-                        <>
-                            <Typography variant="h5">{selectedCompany.company}</Typography>
-                            <Typography variant="subtitle2" color="text.secondary">
-                                {selectedCompany.location}
-                            </Typography>
-                            {selectedCompany && selectedCompany.latitude && selectedCompany.longitude && (
-                                <Box sx={{ my: 2 }}>
-                                    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY!}>
-                                        <GoogleMap
-                                            mapContainerStyle={{ width: '100%', height: '13.75rem', borderRadius: 8 }}
-                                            center={{ lat: selectedCompany.latitude, lng: selectedCompany.longitude }}
-                                            zoom={14}
-                                        >
-                                            <Marker position={{ lat: selectedCompany.latitude, lng: selectedCompany.longitude }} />
-                                        </GoogleMap>
-                                    </LoadScript>
-                                </Box>
-                            )}
-                            <Stack spacing={2} mt={2}>
-                                {selectedCompany.roles.map((role) => (
-                                    <Box key={role.title + role.startDate}>
-                                        <Typography variant="subtitle1">{role.title}</Typography>
-                                        <Typography variant="body2" color="text.secondary">
+                {selectedCompany && (
+                    <>
+                        <Typography className={styles.modalTitle}>
+                            {selectedCompany.company}
+                        </Typography>
+                        <Typography className={styles.modalLocation}>
+                            {selectedCompany.location}
+                        </Typography>
+                        
+                        {selectedCompany && selectedCompany.latitude && selectedCompany.longitude && (
+                            <Box className={styles.mapContainer}>
+                                <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY!}>
+                                    <GoogleMap
+                                        mapContainerStyle={{ width: '100%', height: '13.75rem', borderRadius: 8 }}
+                                        center={{ lat: selectedCompany.latitude, lng: selectedCompany.longitude }}
+                                        zoom={14}
+                                    >
+                                        <Marker position={{ lat: selectedCompany.latitude, lng: selectedCompany.longitude }} />
+                                    </GoogleMap>
+                                </LoadScript>
+                            </Box>
+                        )}
+                        
+                        <Stack spacing={2} className={styles.modalContent}>
+                            {selectedCompany.roles.map((role, index) => (
+                                <Box key={role.title + role.startDate}>
+                                    <Box className={styles.roleSection}>
+                                        <Typography className={styles.roleTitle}>
+                                            {role.title}
+                                        </Typography>
+                                        <Typography className={styles.roleDates}>
                                             {role.startDate} – {role.endDate ?? 'Present'}
                                         </Typography>
-                                        <List>
+                                        <List disablePadding>
                                             {role.description.map((point, i) => (
-                                                <ListItem
-                                                    key={i}
-                                                    disablePadding
-                                                    sx={{
-                                                        backgroundColor: 'background.paper',
-                                                        boxShadow: 1,
-                                                        px: 2,
-                                                        py: 1,
-                                                    }}
-                                                >
-                                                    <ListItemText primary={point}/>
-                                                </ListItem>
+                                                <Box key={i}>
+                                                    <ListItem
+                                                        disablePadding
+                                                        className={styles.descriptionItem}
+                                                    >
+                                                        <ListItemText primary={point} />
+                                                    </ListItem>
+                                                    {i < role.description.length - 1 && (
+                                                        <Box className={styles.descriptionSeparator} />
+                                                    )}
+                                                </Box>
                                             ))}
                                         </List>
                                     </Box>
-                                ))}
-                            </Stack>
-                        </>
-                    )}
-                </Box>
+                                    {index < selectedCompany.roles.length - 1 && (
+                                        <Box className={styles.roleSeparator} />
+                                    )}
+                                </Box>
+                            ))}
+                        </Stack>
+                    </>
+                )}
             </Modal>
         </>
     );

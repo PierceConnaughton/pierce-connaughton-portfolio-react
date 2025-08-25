@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Card, CardContent, Typography, Chip, Stack } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import styles from './ProjectCard.module.scss';
 import type {Project} from "../../../data/Projects/ProjectsInterface.ts";
 
@@ -20,20 +20,25 @@ interface Props {
  * ProjectCard component displays a card for each project with its title and technologies used.
  */
 const ProjectCard: React.FC<Props> = ({ project, onClick }) => (
-    <Card
+    <Box
         onClick={onClick}
         className={styles.projectCard}
-        sx={{ cursor: 'pointer', mb: 2 }}
     >
-        <CardContent>
-            <Typography variant="h6">{project.title}</Typography>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} mt={1} alignItems="flex-start">
-                {project.technologies.map((tech) => (
-                    <Chip key={tech} label={tech} size="small" sx={{ width: 'auto' }} />
-                ))}
-            </Stack>
-        </CardContent>
-    </Card>
+        <Typography variant="h5" className={styles.cardTitle}>
+            {project.title}
+        </Typography>
+        <Box className={styles.techStack}>
+            {project.technologies.map((tech) => (
+                <Typography 
+                    key={tech} 
+                    component="span" 
+                    className={styles.techChip}
+                >
+                    {tech}
+                </Typography>
+            ))}
+        </Box>
+    </Box>
 );
 
 export default ProjectCard;

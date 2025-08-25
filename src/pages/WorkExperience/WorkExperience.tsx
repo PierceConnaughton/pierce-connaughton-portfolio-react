@@ -7,24 +7,24 @@
  */
 
 import React from 'react';
-import {Container, Typography} from '@mui/material';
+import { PageHeader, PageContainer } from '../../components';
 import WorkExperienceList from "./WorkExperienceList/WorkExperienceList.tsx";
-import '../../styles/_headings.scss'
 
 /*
  * WorkExperience component displays a list of work experiences with a brief description.
  * It includes a title and a short introduction.
  */
 const WorkExperience: React.FC = () => (
-    <Container>
-        <Typography variant="h4" className="heading-underline" gutterBottom>
-            Work Experience
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 3 }}>
-            Here are some of the companies I have worked for, along with my roles and responsibilities. Click on any company to see more details about my experience there.
-        </Typography>
+    <PageContainer className="workExperiencePage">
+        {/* Page Header */}
+        <PageHeader 
+            title="Work Experience"
+            description="Explore my professional journey through various companies and roles. Click on any company to see detailed information about my responsibilities, achievements, and the technologies I worked with."
+        />
+        
+        {/* Work Experience List */}
         <WorkExperienceList />
-    </Container>
+    </PageContainer>
 );
 
 export default WorkExperience;

@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     return (
         <div className={styles.root}>
             <Paper elevation={0} className={styles.card}>
-                <Stack spacing={5} alignItems="center">
+                <Stack spacing={3} alignItems="center">
                     {/* Profile Section */}
                     <Box sx={{ position: 'relative', textAlign: 'center' }}>
                         <Avatar
@@ -27,9 +27,9 @@ const Home: React.FC = () => {
                             alt="Pierce Connaughton"
                             className={styles.avatar}
                             sx={{ 
-                                width: '11rem', 
-                                height: '11rem',
-                                border: '5px solid rgba(255, 255, 255, 0.9)',
+                                width: '9rem', 
+                                height: '9rem',
+                                border: '4px solid rgba(255, 255, 255, 0.9)',
                                 mx: 'auto'
                             }}
                         />
@@ -41,14 +41,14 @@ const Home: React.FC = () => {
                             variant="h2"
                             gutterBottom
                             className={styles.heading}
-                            sx={{ mb: 2 }}
+                            sx={{ mb: 1 }}
                         >
                             Pierce Connaughton
                         </Typography>
                         <Typography
                             variant="h4"
                             className={styles.subheading}
-                            sx={{ mb: 3 }}
+                            sx={{ mb: 2 }}
                         >
                             Software Engineer
                         </Typography>
@@ -56,9 +56,9 @@ const Home: React.FC = () => {
                         {/* Decorative divider */}
                         <Divider 
                             sx={{ 
-                                width: '60px', 
+                                width: '50px', 
                                 mx: 'auto', 
-                                mb: 3,
+                                mb: 2,
                                 borderColor: 'rgba(0, 128, 128, 0.3)',
                                 borderWidth: '2px'
                             }} 
@@ -66,12 +66,12 @@ const Home: React.FC = () => {
                     </Box>
                     
                     {/* Content Section */}
-                    <Box sx={{ maxWidth: '34rem', width: '100%' }}>
+                    <Box sx={{ maxWidth: '32rem', width: '100%' }}>
                         <Typography
                             variant="body1"
                             color="text.secondary"
                             className={styles.body}
-                            sx={{ mb: 3, fontSize: '1.15rem' }}
+                            sx={{ mb: 2, fontSize: '1.1rem' }}
                         >
                             Hi I'm Pierce, a passionate software developer with a BSc in Computing (Distinction). Committed to providing high-level solutions that drive business.
                         </Typography>
@@ -79,9 +79,9 @@ const Home: React.FC = () => {
                             variant="body1"
                             color="text.secondary"
                             className={styles.body}
-                            sx={{ mb: 3, fontSize: '1.15rem' }}
+                            sx={{ mb: 2, fontSize: '1.1rem' }}
                         >
-                            Currently, I work as an Associate Software Engineer, developing a range of applications—including web applications, event-driven systems, APIs, and cloud solutions.
+                            Currently working as an Associate Software Engineer, developing web applications, event-driven systems, APIs, and cloud solutions.
                         </Typography>
                         <Typography
                             variant="body2"
@@ -89,8 +89,8 @@ const Home: React.FC = () => {
                             className={styles.body}
                             sx={{ 
                                 fontStyle: 'italic', 
-                                mb: 4,
-                                fontSize: '1.05rem',
+                                mb: 3,
+                                fontSize: '1rem',
                                 opacity: 0.8,
                                 textAlign: 'center'
                             }}
@@ -100,8 +100,8 @@ const Home: React.FC = () => {
                     </Box>
                     
                     {/* Action Buttons */}
-                    <Box sx={{ width: '100%', mt: 2 }}>
-                        <Grid container spacing={3} columns={{ xs: 4, md: 8 }}>
+                    <Box sx={{ width: '100%', mt: 1 }}>
+                        <Grid container spacing={2} columns={{ xs: 4, md: 8 }}>
                             <Grid size={4}>
                                 <Button
                                     variant="outlined"
@@ -110,7 +110,7 @@ const Home: React.FC = () => {
                                     to="/projects"
                                     className={styles.button}
                                     fullWidth
-                                    sx={{ height: '3.5rem' }}
+                                    sx={{ height: '3rem' }}
                                 >
                                     View Projects
                                 </Button>
@@ -123,7 +123,7 @@ const Home: React.FC = () => {
                                     to="/work-experience"
                                     className={styles.button}
                                     fullWidth
-                                    sx={{ height: '3.5rem' }}
+                                    sx={{ height: '3rem' }}
                                 >
                                     Work Experience
                                 </Button>
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                                     to="/about"
                                     className={styles.button}
                                     fullWidth
-                                    sx={{ height: '3.5rem' }}
+                                    sx={{ height: '3rem' }}
                                 >
                                     About Me
                                 </Button>
@@ -145,11 +145,11 @@ const Home: React.FC = () => {
                     </Box>
                     
                     {/* Footer note */}
-                    <Box sx={{ mt: 2, opacity: 0.6 }}>
+                    <Box sx={{ mt: 1, opacity: 0.6 }}>
                         <Typography
                             variant="caption"
                             color="text.secondary"
-                            sx={{ fontSize: '0.85rem' }}
+                            sx={{ fontSize: '0.8rem' }}
                         >
                             Built with React & Material-UI
                         </Typography>
