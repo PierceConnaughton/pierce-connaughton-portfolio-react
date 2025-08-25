@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Container, Box } from '@mui/material';
+import { Container } from '@mui/material';
 import styles from './PageContainer.module.scss';
 
 interface PageContainerProps {
