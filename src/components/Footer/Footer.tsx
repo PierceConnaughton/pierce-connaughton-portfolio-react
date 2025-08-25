@@ -6,7 +6,7 @@
  * See the LICENSE file in the project root for license information.
  */
 
-import { Box, Typography, IconButton, Link as MuiLink, Button } from '@mui/material';
+import { Box, Typography, IconButton, Button } from '@mui/material';
 import { FaLinkedin, FaGithub, FaMapMarker, FaEnvelope, FaPhone } from 'react-icons/fa';
 import DownloadIcon from '@mui/icons-material/Download';
 import { Link } from 'react-router-dom';
