@@ -1,0 +1,62 @@
+/*!
+ * © 2025 Pierce Connaughton
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT License.
+ * See the LICENSE file in the project root for license information.
+ */
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  .pageTitle {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  
+  .pageDescription {
+    color: #6c757d;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// Responsive design
+@media (max-width: 900px) {
+  .pageHeader {
+    margin-bottom: 1.75rem;
+    
+    .pageTitle {
+      font-size: 1.75rem;
+    }
+    
+    .pageDescription {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .pageHeader {
+    margin-bottom: 1.5rem;
+    
+    .pageTitle {
+      font-size: 1.5rem;
+    }
+    
+    .pageDescription {
+      font-size: 0.9rem;
+      padding: 0 0.75rem;
+    }
+  }
+}
