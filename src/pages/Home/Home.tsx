@@ -99,6 +99,72 @@ const Home: React.FC = () => {
                         </Typography>
                     </Box>
                     
+                    {/* Featured Project Section */}
+                    <Box sx={{ width: '100%', mb: 3 }}>
+                        <Typography
+                            variant="h6"
+                            sx={{ 
+                                mb: 2, 
+                                color: 'text.primary',
+                                fontWeight: 600,
+                                textAlign: 'center'
+                            }}
+                        >
+                            Latest Project
+                        </Typography>
+                        <Paper 
+                            elevation={0} 
+                            sx={{ 
+                                p: 3, 
+                                background: 'linear-gradient(135deg, rgba(0, 128, 128, 0.05) 0%, rgba(0, 188, 212, 0.05) 100%)',
+                                border: '1px solid rgba(0, 128, 128, 0.1)',
+                                borderRadius: '1rem',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-2px)',
+                                    boxShadow: '0 8px 25px rgba(0, 128, 128, 0.15)',
+                                    borderColor: 'rgba(0, 128, 128, 0.2)'
+                                }
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{ 
+                                    mb: 1, 
+                                    color: 'primary.main',
+                                    fontWeight: 700
+                                }}
+                            >
+                                WrestleGraph
+                            </Typography>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{ mb: 2, fontSize: '0.95rem' }}
+                            >
+                                A webapp that visualizes statistics scraped from cagematch.net. Built with Angular and Spring.
+                            </Typography>
+                            <Button
+                                variant="contained"
+                                href="https://www.wrestlegraph.com"
+                                target="_blank"
+                                rel="noopener"
+                                className={styles.featuredButton}
+                                fullWidth
+                                sx={{ 
+                                    height: '2.5rem',
+                                    background: 'linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%)',
+                                    '&:hover': {
+                                        background: 'linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%)',
+                                        transform: 'translateY(-1px)'
+                                    }
+                                }}
+                            >
+                                View WrestleGraph
+                            </Button>
+                        </Paper>
+                    </Box>
+                    
                     {/* Action Buttons */}
                     <Box sx={{ width: '100%', mt: 1 }}>
                         <Grid container spacing={2} columns={{ xs: 4, md: 8 }}>
