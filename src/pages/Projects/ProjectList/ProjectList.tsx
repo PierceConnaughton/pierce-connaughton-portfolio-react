@@ -39,6 +39,15 @@ const ProjectList: React.FC = () => {
             <Modal open={!!selectedProject} onClose={handleClose}>
                 {selectedProject && (
                     <>
+                        {selectedProject.image && (
+                            <Box className={styles.modalImageWrapper}>
+                                <img
+                                    src={selectedProject.image}
+                                    alt={`${selectedProject.title} screenshot`}
+                                    className={styles.modalImage}
+                                />
+                            </Box>
+                        )}
                         <Typography className={styles.modalTitle}>
                             {selectedProject.title}
                         </Typography>

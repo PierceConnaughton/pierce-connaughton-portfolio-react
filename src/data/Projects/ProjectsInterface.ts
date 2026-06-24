@@ -13,4 +13,5 @@ export interface Project {
     githubLink: string;
     liveDemo?: string;
     featured?: boolean;
+    image?: string;
 }

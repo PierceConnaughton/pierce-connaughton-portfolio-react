@@ -6,7 +6,7 @@
  * See the LICENSE file in the project root for license information.
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Typography, Paper, Box, List, ListItem, ListItemText, Accordion, AccordionSummary, AccordionDetails, Chip } from '@mui/material';
 import { PageHeader, PageContainer, PageMeta } from '../../components';
 import { pageSeo } from '../../config/seo';
@@ -20,11 +20,9 @@ import {
     ides
 } from '../../data/Skills/skills.ts';
 import { university } from "../../data/University/university.ts";
-import * as SiIcons from 'react-icons/si';
-import * as LgIcons from '@meronex/icons/lg';
-import { MdBuild } from 'react-icons/md';
 import {GoogleMap, LoadScript, Marker} from "@react-google-maps/api";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { getSkillIcon } from '../../data/Skills/skillIcons';
 import styles from './About.module.scss';
 
 /*
@@ -46,23 +44,24 @@ const About: React.FC = () => {
         );
     };
 
-    const getIconComponent = (iconName?: string) => {
-        if (!iconName) return MdBuild;
-        const siIcons = SiIcons as Record<string, React.ComponentType>;
-        const lgIcons = LgIcons as Record<string, React.ComponentType>;
-        return siIcons[iconName] || lgIcons[iconName] || MdBuild;
+    const renderSkillItem = (name: string, iconName?: string) => {
+        const Icon = getSkillIcon(iconName);
+        return (
+            <ListItem key={name} className={styles.skillItem}>
+                {iconName && <Icon className={styles.skillIcon} />}
+                <ListItemText primary={name} className={styles.skillText} />
+            </ListItem>
+        );
     };
 
     return (
         <PageContainer className={styles.aboutPage}>
             <PageMeta {...pageSeo.about} />
-            {/* Page Header */}
             <PageHeader 
                 title="About Me"
                 description="Full-stack software engineer at SITA building event-driven aviation baggage systems. BSc Computer Science graduate with production experience across Java, Kafka, Spring Boot, and cloud-native web apps."
             />
 
-            {/* Bio Section */}
             <Box className={styles.bioSection}>
                 <Paper elevation={0} className={styles.bioPaper}>
                     <Typography variant="body1" className={styles.bioText}>
@@ -77,7 +76,6 @@ const About: React.FC = () => {
                 </Paper>
             </Box>
 
-            {/* Core Skills */}
             <Box className={styles.coreSkillsSection}>
                 <Typography variant="h5" className={styles.sectionTitle} gutterBottom>
                     Core skills
@@ -91,7 +89,6 @@ const About: React.FC = () => {
                 </Paper>
             </Box>
 
-            {/* Education Section */}
             <Box className={styles.educationSection}>
                 <Typography variant="h5" className={styles.sectionTitle} gutterBottom>
                     Education
@@ -123,7 +120,6 @@ const About: React.FC = () => {
                 </Paper>
             </Box>
 
-            {/* Skills Section */}
             <Box className={styles.skillsSection}>
                 <Typography variant="h5" className={styles.sectionTitle} gutterBottom>
                     All skills
@@ -139,14 +135,7 @@ const About: React.FC = () => {
                         </AccordionSummary>
                         <AccordionDetails className={styles.accordionDetails}>
                             <List dense>
-                                {programmingLanguages.map((lang) => (
-                                    <ListItem key={lang.name} className={styles.skillItem}>
-                                        {lang.icon && (
-                                            <Box component={getIconComponent(lang.icon)} className={styles.skillIcon} />
-                                        )}
-                                        <ListItemText primary={lang.name} className={styles.skillText} />
-                                    </ListItem>
-                                ))}
+                                {programmingLanguages.map((lang) => renderSkillItem(lang.name, lang.icon))}
                             </List>
                         </AccordionDetails>
                     </Accordion>
@@ -161,14 +150,7 @@ const About: React.FC = () => {
                         </AccordionSummary>
                         <AccordionDetails className={styles.accordionDetails}>
                             <List dense>
-                                {frameworks.map((framework) => (
-                                    <ListItem key={framework.name} className={styles.skillItem}>
-                                        {framework.icon && (
-                                            <Box component={getIconComponent(framework.icon)} className={styles.skillIcon} />
-                                        )}
-                                        <ListItemText primary={framework.name} className={styles.skillText} />
-                                    </ListItem>
-                                ))}
+                                {frameworks.map((framework) => renderSkillItem(framework.name, framework.icon))}
                             </List>
                         </AccordionDetails>
                     </Accordion>
@@ -183,14 +165,7 @@ const About: React.FC = () => {
                         </AccordionSummary>
                         <AccordionDetails className={styles.accordionDetails}>
                             <List dense>
-                                {cloudWeb.map((tech) => (
-                                    <ListItem key={tech.name} className={styles.skillItem}>
-                                        {tech.icon && (
-                                            <Box component={getIconComponent(tech.icon)} className={styles.skillIcon} />
-                                        )}
-                                        <ListItemText primary={tech.name} className={styles.skillText} />
-                                    </ListItem>
-                                ))}
+                                {cloudWeb.map((tech) => renderSkillItem(tech.name, tech.icon))}
                             </List>
                         </AccordionDetails>
                     </Accordion>
@@ -224,14 +199,7 @@ const About: React.FC = () => {
                         </AccordionSummary>
                         <AccordionDetails className={styles.accordionDetails}>
                             <List dense>
-                                {toolsAndTechnologies.map((tool) => (
-                                    <ListItem key={tool.name} className={styles.skillItem}>
-                                        {tool.icon && (
-                                            <Box component={getIconComponent(tool.icon)} className={styles.skillIcon} />
-                                        )}
-                                        <ListItemText primary={tool.name} className={styles.skillText} />
-                                    </ListItem>
-                                ))}
+                                {toolsAndTechnologies.map((tool) => renderSkillItem(tool.name, tool.icon))}
                             </List>
                         </AccordionDetails>
                     </Accordion>
@@ -246,14 +214,7 @@ const About: React.FC = () => {
                         </AccordionSummary>
                         <AccordionDetails className={styles.accordionDetails}>
                             <List dense>
-                                {ides.map((tool) => (
-                                    <ListItem key={tool.name} className={styles.skillItem}>
-                                        {tool.icon && (
-                                            <Box component={getIconComponent(tool.icon)} className={styles.skillIcon} />
-                                        )}
-                                        <ListItemText primary={tool.name} className={styles.skillText} />
-                                    </ListItem>
-                                ))}
+                                {ides.map((tool) => renderSkillItem(tool.name, tool.icon))}
                             </List>
                         </AccordionDetails>
                     </Accordion>

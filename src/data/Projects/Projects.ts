@@ -16,6 +16,7 @@ export const projects: Project[] = [
         githubLink: 'https://github.com/PierceConnaughton/wrestlegraph-frontend',
         liveDemo: 'https://www.wrestlegraph.com',
         featured: true,
+        image: '/projects/wrestlegraph.png',
     },
     {
         title: 'Personal Portfolio',
@@ -24,6 +25,7 @@ export const projects: Project[] = [
         githubLink: 'https://github.com/PierceConnaughton/pierce-connaughton-portfolio-react',
         liveDemo: 'https://www.pierce-connaughton-portfolio.ie',
         featured: true,
+        image: '/projects/portfolio.png',
     },
     {
         title: 'AI Tweet Generator',

@@ -102,7 +102,25 @@ const Header = () => {
                     </Typography>
                     
                     {/* Mobile Nav */}
-                    <Box sx={{ display: { xs: 'flex', lg: 'none' } }}>
+                    <Box sx={{ display: { xs: 'flex', lg: 'none' }, alignItems: 'center', gap: 0.5 }}>
+                        <IconButton
+                            component="a"
+                            href="/Pierce Connaughton resume.pdf"
+                            download
+                            aria-label="Download resume"
+                            color="inherit"
+                            size="large"
+                            sx={{
+                                color: 'white',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                    transform: 'scale(1.05)',
+                                },
+                                transition: 'all 0.2s ease',
+                            }}
+                        >
+                            <DownloadIcon />
+                        </IconButton>
                         <IconButton
                             size="large"
                             aria-label="toggle navigation"

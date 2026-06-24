@@ -13,6 +13,8 @@ import { Modal } from '../../../components';
 import styles from './WorkExperienceList.module.scss';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
+import { createKeyboardClickHandler } from '../../../utils/keyboardClickable';
+
 /*
  * WorkExperienceList component displays a list of work experiences. Each experience can be clicked to open a modal with more details.
  * The modal includes the company name, location, roles, and a map showing the company's location.
@@ -28,8 +30,9 @@ const WorkExperienceList: React.FC = () => {
                 {workExperiences.map((companyExp) => (
                     <Box
                         key={companyExp.company}
+                        {...createKeyboardClickHandler(() => setSelectedCompany(companyExp))}
                         className={styles.workExperienceCard}
-                        onClick={() => setSelectedCompany(companyExp)}
+                        aria-label={`View details for ${companyExp.company}`}
                     >
                         <Typography className={styles.companyName}>
                             {companyExp.company}

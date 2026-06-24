@@ -6,12 +6,24 @@
  * See the LICENSE file in the project root for license information.
  */
 
-import React from 'react';
-import Home from '../pages/Home/Home.tsx';
-import ProjectsPage from '../pages/Projects/ProjectsPage.tsx';
-import WorkExperience from "../pages/WorkExperience/WorkExperience.tsx";
-import About from "../pages/About/About.tsx";
-import NotFound from "../pages/NotFound/NotFound.tsx";
+import React, { lazy, Suspense } from 'react';
+import { Box, CircularProgress } from '@mui/material';
+
+const Home = lazy(() => import('../pages/Home/Home.tsx'));
+const ProjectsPage = lazy(() => import('../pages/Projects/ProjectsPage.tsx'));
+const WorkExperience = lazy(() => import('../pages/WorkExperience/WorkExperience.tsx'));
+const About = lazy(() => import('../pages/About/About.tsx'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound.tsx'));
+
+const PageLoader = () => (
+    <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
+        <CircularProgress color="primary" />
+    </Box>
+);
+
+const withSuspense = (element: React.ReactNode) => (
+    <Suspense fallback={<PageLoader />}>{element}</Suspense>
+);
 
 interface RouteType {
     path?: string;
@@ -22,23 +34,23 @@ interface RouteType {
 const routes: RouteType[] = [
     {
         index: true,
-        element: <Home />,
+        element: withSuspense(<Home />),
     },
     {
         path: 'projects',
-        element: <ProjectsPage />,
+        element: withSuspense(<ProjectsPage />),
     },
     {
         path: 'work-experience',
-        element: <WorkExperience />,
+        element: withSuspense(<WorkExperience />),
     },
     {
         path: 'about',
-        element: <About />,
+        element: withSuspense(<About />),
     },
     {
         path: '*',
-        element: <NotFound />,
+        element: withSuspense(<NotFound />),
     },
 ];
 

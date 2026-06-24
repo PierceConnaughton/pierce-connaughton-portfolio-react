@@ -9,29 +9,38 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 import styles from './ProjectCard.module.scss';
-import type {Project} from "../../../data/Projects/ProjectsInterface.ts";
+import type { Project } from '../../../data/Projects/ProjectsInterface.ts';
+import { createKeyboardClickHandler } from '../../../utils/keyboardClickable';
 
 interface Props {
     project: Project;
     onClick: () => void;
 }
 
-/*
- * ProjectCard component displays a card for each project with its title and technologies used.
- */
 const ProjectCard: React.FC<Props> = ({ project, onClick }) => (
     <Box
-        onClick={onClick}
+        {...createKeyboardClickHandler(onClick)}
         className={styles.projectCard}
+        aria-label={`View details for ${project.title}`}
     >
+        {project.image && (
+            <Box className={styles.imageWrapper}>
+                <img
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    className={styles.projectImage}
+                    loading="lazy"
+                />
+            </Box>
+        )}
         <Typography variant="h5" className={styles.cardTitle}>
             {project.title}
         </Typography>
         <Box className={styles.techStack}>
             {project.technologies.map((tech) => (
-                <Typography 
-                    key={tech} 
-                    component="span" 
+                <Typography
+                    key={tech}
+                    component="span"
                     className={styles.techChip}
                 >
                     {tech}
@@ -42,5 +51,3 @@ const ProjectCard: React.FC<Props> = ({ project, onClick }) => (
 );
 
 export default ProjectCard;
-
-

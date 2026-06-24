@@ -67,7 +67,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #6c5ce7, #a29bfe, #6c5ce7);
+    background: linear-gradient(90deg, #008080, #4FD1C5, #008080);
     background-size: 200% 100%;
     animation: shimmer 3s ease-in-out infinite;
   }
@@ -105,7 +105,7 @@
     left: 0;
     width: 3rem;
     height: 3px;
-    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+    background: linear-gradient(90deg, #008080, #4FD1C5);
     border-radius: 2px;
   }
 }
@@ -168,7 +168,7 @@
   
   &:hover {
     transform: translateY(-1px);
-    border-color: #6c5ce7;
+    border-color: #008080;
     box-shadow: 0 4px 16px rgba(108, 92, 231, 0.12);
   }
   
@@ -179,7 +179,7 @@
   &.Mui-expanded {
     margin: 0.5rem 0;
     box-shadow: 0 6px 20px rgba(108, 92, 231, 0.15);
-    border-color: #6c5ce7;
+    border-color: #008080;
   }
 }
 
@@ -201,7 +201,7 @@
   
   .MuiAccordionSummary-expandIconWrapper {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: #6c5ce7;
+    color: #008080;
     
     &.Mui-expanded {
       transform: rotate(180deg);
@@ -247,7 +247,7 @@
 
 .skillIcon {
   font-size: 1.25rem;
-  color: #6c5ce7;
+  color: #008080;
   margin-right: 0.75rem;
   vertical-align: middle;
   display: inline-flex;
@@ -256,7 +256,7 @@
   
   &:hover {
     transform: scale(1.1);
-    color: #a29bfe;
+    color: #4FD1C5;
   }
 }
 
