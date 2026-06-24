@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import { PageHeader, PageContainer } from '../../components';
+import { PageHeader, PageContainer, PageMeta } from '../../components';
+import { pageSeo } from '../../config/seo';
 import WorkExperienceList from "./WorkExperienceList/WorkExperienceList.tsx";
 
 /*
@@ -16,10 +17,11 @@ import WorkExperienceList from "./WorkExperienceList/WorkExperienceList.tsx";
  */
 const WorkExperience: React.FC = () => (
     <PageContainer className="workExperiencePage">
+        <PageMeta {...pageSeo.workExperience} />
         {/* Page Header */}
         <PageHeader 
             title="Work Experience"
-            description="Explore my professional journey through various companies and roles. Click on any company to see detailed information about my responsibilities, achievements, and the technologies I worked with."
+            description="Production engineering at SITA on aviation baggage systems — event-driven APIs, lost-luggage search, and refund automation. Click a company for full details."
         />
         
         {/* Work Experience List */}

@@ -10,47 +10,51 @@ import type { Project } from './ProjectsInterface.ts';
 
 export const projects: Project[] = [
     {
-        title: 'Personal Portfolio',
-        description: 'A personal portfolio website built using React and TypeScript. It showcases my projects, skills, and experience. This is the first project I created using React and TypeScript, and it helped me learn the basics of both technologies.',
-        technologies: ['React', 'TypeScript', 'Material-UI'],
-        githubLink: 'https://github.com/PierceConnaughton/pierce-connaughton-portfolio-react',
-        liveDemo: 'https://pierce-connaughton.ie'
+        title: 'WrestleGraph',
+        description: 'A live web application that visualizes professional wrestling statistics scraped from Cagematch.net. Full-stack project with an Angular frontend and Spring Boot backend — demonstrates data pipelines, charting, and deployed production UX.',
+        technologies: ['Angular', 'Spring Boot', 'Material-UI'],
+        githubLink: 'https://github.com/PierceConnaughton/wrestlegraph-frontend',
+        liveDemo: 'https://www.wrestlegraph.com',
+        featured: true,
     },
     {
-        title: 'WrestleGraph',
-        description: 'A webapp that visualizes statistics scraped from cagematch.net. It showcases my skills with angular and spring.',
-        technologies: ['Angular', 'Spring', 'Material-UI'],
-        githubLink: 'https://github.com/PierceConnaughton/wrestlegraph-frontend',
-        liveDemo: 'https://www.wrestlegraph.com'
+        title: 'Personal Portfolio',
+        description: 'Responsive portfolio built with React and TypeScript to showcase professional experience, projects, and contact channels. Deployed on Vercel with Material-UI and SCSS modules.',
+        technologies: ['React', 'TypeScript', 'Material-UI', 'Vite'],
+        githubLink: 'https://github.com/PierceConnaughton/pierce-connaughton-portfolio-react',
+        liveDemo: 'https://www.pierce-connaughton-portfolio.ie',
+        featured: true,
     },
     {
         title: 'AI Tweet Generator',
-        description: 'A tweet generator that uses the Twitter API to generate tweets based on a given topic. It allows users to input a topic and generates a tweet based on that topic, as well as detect the sentiment of the topic. This was used as my final project for university, using technologies I had not used upto that point.',
-        technologies: ['Python', 'Kivy', 'KivyMD', 'Twitter API'],
+        description: 'Final-year university project: a Python/Kivy mobile app integrating the X API to generate context-aware tweets and run sentiment analysis (positive, neutral, or negative).',
+        technologies: ['Python', 'Kivy', 'KivyMD', 'X API'],
         githubLink: 'https://github.com/PierceConnaughton/Project-400',
     },
     {
         title: 'WPF Black Jack Game',
-        description: 'In my second year in About, I created a working blackjack game using WPF for my programming project. This project helped earn me my 90% in my final grade.',
+        description: 'Second-year programming project: a fully playable blackjack game built with WPF and C#, contributing to a 90% module grade.',
         technologies: ['C#', 'WPF', 'XAML'],
         githubLink: 'https://github.com/PierceConnaughton/BlackJack',
     },
     {
         title: 'PC Part Picker',
-        description: 'A web application that allows users to create a custom PC build by selecting components from a list of available parts. The app provides compatibility checks and price comparisons for each component.',
-        technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Rainforest API'],
+        description: 'Angular web app for building custom PCs with component compatibility checks and price comparisons via the Rainforest API.',
+        technologies: ['Angular', 'TypeScript', 'Rainforest API'],
         githubLink: 'https://github.com/PierceConnaughton/OpenStackProject',
     },
     {
         title: 'Ruby Social',
-        description: 'A small social media application built using Ruby on Rails, to help upskill myself on Ruby. it is a social media website that will allow a user to login create posts, follow other users, comment and like on others posts. You will also be able to see a full list of all the accounts a user follows and who is following them',
+        description: 'Social media app built with Ruby on Rails to practice full-stack development — posts, follows, comments, likes, and follower listings with PostgreSQL.',
         technologies: ['Ruby', 'Ruby on Rails', 'PostgreSQL'],
         githubLink: 'https://github.com/PierceConnaughton/ruby-social'
     },
     {
         title: 'First Unity Game',
-        description: 'A small game created using Unity and C# to help upskill myself on Unity. It is a simple game where you have to collect coins and avoid traps.',
+        description: '2D Unity game in C# — collect coins, avoid traps. Built to learn game development fundamentals.',
         technologies: ['Unity', 'C#'],
         githubLink: 'https://github.com/PierceConnaughton/First-2D-Game'
     }
 ];
+
+export const featuredProjects = projects.filter((project) => project.featured);

@@ -7,17 +7,26 @@
  */
 
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import PageMeta from '../../components/PageMeta/PageMeta';
+import { pageSeo } from '../../config/seo';
 
 const NotFound: React.FC = () => (
-    <Container>
-        <Typography variant="h4" gutterBottom>
-            404 – Page Not Found
-        </Typography>
-        <Typography variant="body1">
-            Sorry, the page you are looking for does not exist.
-        </Typography>
-    </Container>
+    <>
+        <PageMeta {...pageSeo.notFound} noIndex />
+        <Container>
+            <Typography variant="h4" gutterBottom>
+                404 – Page Not Found
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3 }}>
+                Sorry, the page you are looking for does not exist.
+            </Typography>
+            <Button component={Link} to="/" variant="contained" color="primary">
+                Back to home
+            </Button>
+        </Container>
+    </>
 );
 
 export default NotFound;

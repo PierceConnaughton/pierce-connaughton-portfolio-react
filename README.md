@@ -14,7 +14,7 @@ A modern, responsive personal portfolio website built with React and TypeScript 
 
 ## 🚀 Live Demo
 
-[View Portfolio](https://pierce-connaughton.ie) 
+[View Portfolio](https://www.pierce-connaughton-portfolio.ie) 
 
 ## 🛠️ Technologies Used
 

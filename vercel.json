@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "pierce-connaughton-portfolio.ie"
+        }
+      ],
+      "destination": "https://www.pierce-connaughton-portfolio.ie/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]

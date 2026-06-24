@@ -1,0 +1,19 @@
+---
+description: Entry point for portfolio agent roles and project standards
+alwaysApply: true
+---
+
+This repo is **pierce-connaughton-portfolio-react** — a Vite + React + TypeScript portfolio SPA (MUI, SCSS modules). No test suite, no monorepo, no Azure DevOps.
+
+**Start here:** [`.agents/README.md`](../../.agents/README.md)
+
+| Task | Read |
+|------|------|
+| Multi-step or coordinated work | [`.agents/roles/orchestrator.md`](../../.agents/roles/orchestrator.md) |
+| Implement changes | [`.agents/roles/coder.md`](../../.agents/roles/coder.md) |
+| File layout & conventions | [`.agents/standards/project.md`](../../.agents/standards/project.md) |
+| Ambiguous requests | [`.agents/workflows/ask-when-unclear.md`](../../.agents/workflows/ask-when-unclear.md) |
+
+Quality gates: `npm run lint` and `npm run build`. Verify UI with `npm run dev` when needed.
+
+Commit only when the user explicitly asks.

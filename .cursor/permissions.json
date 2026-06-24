@@ -1,0 +1,13 @@
+{
+  "terminalAllowlist": [
+    "cd ",
+    "git status",
+    "git diff",
+    "git add",
+    "git commit",
+    "git push",
+    "npm install",
+    "npm run",
+    "npx vite"
+  ]
+}

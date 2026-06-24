@@ -8,6 +8,7 @@
 
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 import App from './App';
 import routes from './routes/routes';
@@ -16,9 +17,10 @@ import theme from './styles/theme';
 import { CssBaseline } from '@mui/material';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
+    <HelmetProvider>
     <ThemeProvider theme={theme}>
     <CssBaseline />
-    <BrowserRouter>f
+    <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
                 {routes.map(({ path, element, index }) => (
@@ -28,4 +30,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </Routes>
     </BrowserRouter>
     </ThemeProvider>
+    </HelmetProvider>
 );

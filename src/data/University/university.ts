@@ -8,11 +8,12 @@
 
 export const university = {
     name: 'Atlantic Technological University',
-    location: 'Sligo Town, Sligo, Ireland',
-    startDate: '2018',
-    endDate: '2022',
-    degree: 'Bachelor of Science (Hons) in Computing',
-    results: 'First Class Honours',
+    location: 'Sligo, Ireland',
+    startDate: 'Sep 2018',
+    endDate: 'May 2022',
+    degree: 'Bachelor of Science in Computer Science',
+    gpa: '75.66',
+    award: 'Academic Excellence Award',
     latitude: 54.27928218623704,
     longitude: -8.461365917644567
-}
+};

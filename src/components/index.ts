@@ -9,3 +9,5 @@
 export { default as PageHeader } from './PageHeader/PageHeader';
 export { default as PageContainer } from './PageContainer/PageContainer';
 export { default as Modal } from './Modal/Modal';
+export { default as PageMeta } from './PageMeta/PageMeta';
+export { default as JsonLd } from './JsonLd/JsonLd';

@@ -7,9 +7,11 @@
  */
 
 import React, {useState} from 'react';
-import { Typography, Paper, Box, List, ListItem, ListItemText, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import { PageHeader, PageContainer } from '../../components';
+import { Typography, Paper, Box, List, ListItem, ListItemText, Accordion, AccordionSummary, AccordionDetails, Chip } from '@mui/material';
+import { PageHeader, PageContainer, PageMeta } from '../../components';
+import { pageSeo } from '../../config/seo';
 import {
+    coreSkills,
     softSkills,
     programmingLanguages,
     frameworks,
@@ -46,27 +48,46 @@ const About: React.FC = () => {
 
     const getIconComponent = (iconName?: string) => {
         if (!iconName) return MdBuild;
-        // @ts-ignore
-        return SiIcons[iconName] || LgIcons[iconName] || MdBuild;
+        const siIcons = SiIcons as Record<string, React.ComponentType>;
+        const lgIcons = LgIcons as Record<string, React.ComponentType>;
+        return siIcons[iconName] || lgIcons[iconName] || MdBuild;
     };
 
     return (
         <PageContainer className={styles.aboutPage}>
+            <PageMeta {...pageSeo.about} />
             {/* Page Header */}
             <PageHeader 
                 title="About Me"
-                description="Learn more about my background, education, and technical skills. Discover the technologies and tools I work with, and understand my approach to software development."
+                description="Full-stack software engineer at SITA building event-driven aviation baggage systems. BSc Computer Science graduate with production experience across Java, Kafka, Spring Boot, and cloud-native web apps."
             />
 
             {/* Bio Section */}
             <Box className={styles.bioSection}>
                 <Paper elevation={0} className={styles.bioPaper}>
                     <Typography variant="body1" className={styles.bioText}>
-                        I am a passionate software developer with a strong foundation in programming languages and frameworks. I have experience in developing web applications, working with cloud technologies, and utilizing various tools to enhance productivity and collaboration.
+                        I am an Associate Software Engineer at SITA in Letterkenny, where I build high-throughput microservices and customer-facing applications for the aviation baggage domain — from Kafka pipelines processing 1,000+ messages per second to Neo4j-powered search for lost luggage.
                     </Typography>
                     <Typography variant="body1" className={styles.bioText}>
-                        I am always eager to learn new technologies and improve my skills. I thrive in collaborative environments and enjoy tackling challenging problems. My goal is to contribute to innovative projects that make a positive impact.
+                        I graduated from Atlantic Technological University with a BSc in Computer Science and an Academic Excellence Award. I work in agile squads, lead sprint demos, and champion AI-assisted development with GitHub Copilot and structured prompt-engineering practices.
                     </Typography>
+                    <Typography variant="body1" className={styles.bioText}>
+                        Outside of SITA I ship side projects like WrestleGraph (Angular + Spring) and keep broadening my stack across React, Python, and cloud tooling.
+                    </Typography>
+                </Paper>
+            </Box>
+
+            {/* Core Skills */}
+            <Box className={styles.coreSkillsSection}>
+                <Typography variant="h5" className={styles.sectionTitle} gutterBottom>
+                    Core skills
+                </Typography>
+                <Paper elevation={0} className={styles.coreSkillsPaper}>
+                    <Box className={styles.coreSkillsChips}>
+                        {coreSkills.map((skill) => (
+                            <Chip key={skill} label={skill} className={styles.coreSkillChip} />
+                        ))}
+                    </Box>
                 </Paper>
             </Box>
 
@@ -80,7 +101,10 @@ const About: React.FC = () => {
                         {university.name}
                     </Typography>
                     <Typography variant="subtitle1" className={styles.degreeInfo}>
-                        {university.degree} - {university.results}
+                        {university.degree}
+                    </Typography>
+                    <Typography variant="body2" className={styles.degreeMeta}>
+                        GPA: {university.gpa} · {university.award}
                     </Typography>
                     <Typography variant="body2" className={styles.degreeDates}>
                         {university.startDate} - {university.endDate}
@@ -102,7 +126,7 @@ const About: React.FC = () => {
             {/* Skills Section */}
             <Box className={styles.skillsSection}>
                 <Typography variant="h5" className={styles.sectionTitle} gutterBottom>
-                    Skills
+                    All skills
                 </Typography>
                 <div className={styles.skillsGrid}>
                     <Accordion 

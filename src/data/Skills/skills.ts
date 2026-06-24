@@ -6,6 +6,25 @@
  * See the LICENSE file in the project root for license information.
  */
 
+export const coreSkills = [
+    'Java',
+    'Spring Boot',
+    'Apache Kafka',
+    'Kubernetes',
+    'Angular',
+    'React',
+    'TypeScript',
+    'AWS',
+    'Neo4j',
+    'MongoDB',
+    'Microservices',
+    'REST APIs',
+    'Docker',
+    'CI/CD',
+    'GitHub Copilot',
+    'Agile / Scrum',
+];
+
 export const softSkills = [
     'Communication',
     'Teamwork',

@@ -12,4 +12,5 @@ export interface Project {
     technologies: string[];
     githubLink: string;
     liveDemo?: string;
+    featured?: boolean;
 }

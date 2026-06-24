@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import { PageHeader, PageContainer } from '../../components';
+import { PageHeader, PageContainer, PageMeta } from '../../components';
+import { pageSeo } from '../../config/seo';
 import ProjectList from "./ProjectList/ProjectList.tsx";
 
 /*
@@ -16,10 +17,11 @@ import ProjectList from "./ProjectList/ProjectList.tsx";
 const ProjectsPage: React.FC = () => {
     return (
         <PageContainer className="projectsPage">
+            <PageMeta {...pageSeo.projects} />
             {/* Page Header */}
             <PageHeader 
                 title="Projects"
-                description="Explore a selection of my personal and academic projects. Click on any project to see more details, technologies used, and links to source code or live demos."
+                description="From production side projects like WrestleGraph to university and learning builds — full-stack apps across Angular, React, Spring, Python, and more."
             />
             
             {/* Project List */}
