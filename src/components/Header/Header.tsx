@@ -25,7 +25,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import DownloadIcon from '@mui/icons-material/Download';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
-import pcLogo from '../../assets/icons/android-chrome-512x512.png';
+
+const LOGO_SRC = '/android-chrome-192x192.png';
 
 /*
  * Header component displays the navigation bar with links to different sections of the website.
@@ -88,14 +89,13 @@ const Header = () => {
                         }}
                     >
                         <img 
-                            src={pcLogo} 
+                            src={LOGO_SRC} 
                             alt="PC Logo" 
                             className={styles.logo}
                             style={{ 
-                                height: 40, 
-                                width: 40, 
+                                height: 44, 
+                                width: 44, 
                                 borderRadius: '50%',
-                                border: '2px solid rgba(255, 255, 255, 0.2)'
                             }} 
                         />
                         Pierce Connaughton
@@ -195,14 +195,13 @@ const Header = () => {
                             className={styles.brand}
                         >
                             <img 
-                                src={pcLogo} 
+                                src={LOGO_SRC} 
                                 alt="PC Logo" 
                                 className={styles.logo}
                                 style={{ 
-                                    height: 36, 
-                                    width: 36,
+                                    height: 40, 
+                                    width: 40,
                                     borderRadius: '50%',
-                                    border: '2px solid rgba(255, 255, 255, 0.2)',
                                     marginRight: '0.5rem'
                                 }} 
                             />

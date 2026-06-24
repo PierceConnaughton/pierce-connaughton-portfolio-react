@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Pierce Connaughton">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="238" fill="url(#bg)" stroke="#ffffff" stroke-width="6"/>
+
+  <g transform="translate(256 256)">
+    <text text-anchor="middle" dominant-baseline="central" fill="#ffffff">
+      <tspan
+        font-family="Segoe UI, Inter, Arial, sans-serif"
+        font-size="168"
+        font-weight="500"
+      >{</tspan>
+      <tspan
+        dx="8"
+        font-family="'Segoe Script', 'Brush Script MT', 'Lucida Handwriting', cursive"
+        font-size="168"
+        font-weight="400"
+      >PC</tspan>
+      <tspan
+        dx="8"
+        font-family="Segoe UI, Inter, Arial, sans-serif"
+        font-size="168"
+        font-weight="500"
+      >}</tspan>
+    </text>
+  </g>
+</svg>
